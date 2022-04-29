@@ -1,0 +1,20 @@
+.button_action {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  padding: 15px 0;
+  width: 110px;
+  border-radius: 25px;
+  color: #333;
+  font-family: "Poppins";
+  font-size: 15px;
+  font-weight: 500;
+  background: white;
+  transition: background linear 0.4s;
+}
+
+.button_action:hover {
+    background: -webkit-linear-gradient(top, #7579ff, #b224ef);
+    color: white;
+}
+

@@ -1,0 +1,231 @@
+.inputContainer {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+  margin-bottom: 30px;
+}
+
+.box {
+  font-family: Poppins;
+  font-size: 16px;
+
+  color: #fff;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: 45px;
+  background: 0 0;
+  padding: 0 5px 0 38px;
+}
+
+.box::placeholder {
+  color: #fff;
+}
+
+.inputSpan {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+.inputSpan::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  transition: all 0.4s;
+  background: #fff;
+}
+
+.inputSpan::after {
+  font-family: Material-Design-Iconic-Font;
+  content: attr(data-placeholder);
+  font-size: 22px;
+  color: #fff;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  padding-left: 5px;
+  transition: all 0.4s;
+}
+
+.box:focus {
+  padding-left: 5px;
+}
+
+.box:focus + .inputSpan::before,
+.hasVal .inputSpan::before {
+  width: 100%;
+}
+
+.box:focus + .inputSpan::after,
+.hasVal .inputSpan::after {
+  top: -22px;
+  font-size: 18px;
+}
+
+.hasVal .box {
+  padding-left: 5px;
+}
+
+.radioContainer{
+  display: flex;
+  justify-content: space-between;
+
+  font-family: Poppins;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #fff;
+  padding-left: 18px;
+  width: 100%;
+}
+
+.radioRow{
+  display: flex;
+  align-items: center;
+  height: 45px;
+}
+
+.radioRow label{
+  margin-left: 5px;
+}
+
+.materialIcon{
+  font-family: Material-Design-Iconic-Font;
+  font-size: 22px;
+  padding-left: 7px;
+  color: #fff;
+}
+
+.radioRow input{
+  accent-color: #555;
+}
+
+select{
+  border: none;
+  background: transparent;
+  font-family: Poppins;
+  font-size: 16px;
+  margin-left: 20px;
+  color: #fff;
+}
+
+option{
+  background-color: #fff;
+  color: #b127f0;
+  border: none;
+}
+
+.selectGroup{
+  margin-left: 8px;
+  height: 45px;
+}
+
+select option:disabled{
+  color: black;
+  background-color: #b127f0;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  display: block;
+  width: 50px;
+  height: 20px;
+  border-width: thin;
+  opacity: 0;
+
+  cursor: pointer;
+  z-index: 50;
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+}
+
+textarea:focus,
+input:focus {
+  border-color: transparent !important;
+}
+
+.errorMessage::before {
+  content: attr(data-validate);
+
+  position: absolute;
+  z-index: 100;
+  max-width: 70%;
+
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  padding: 4px 25px 4px 10px;
+
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+
+  pointer-events: none;
+  font-family: Poppins;
+  font-weight: normal;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.errorMessage::after {
+  content: "\f12a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  z-index: 110;
+  color: #c80000;
+  font-size: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 18px;
+}
+
+.errorMessage:hover::before {
+  visibility: visible;
+  opacity: 1;
+}
+
+.inputBox:not(:focus) .errorMessage::after{
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .errorMessage::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}

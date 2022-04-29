@@ -1,0 +1,140 @@
+.input_all{
+position: relative;
+
+}
+
+.inputBox {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid rgba(228, 227, 227, 0.5);
+    padding: 10px 0;
+    width: 100%;
+    padding-left: 20px;
+    width: calc(100% - 20px);
+    outline: none;
+    color: #ffffff;
+    font-family: Poppins;
+    font-size: 16px;
+    line-height: 1.2;
+        
+}
+
+.incorrect_psw{
+    position: absolute;
+    font-size: 10px;
+    left: 0;
+    top: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.inputBox:focus{
+    border: none;
+    padding-left: 0;
+}
+
+.stay_up {
+    position: absolute;
+    bottom: 60px;
+}
+
+.stay_up_na .icon_go_up{
+    
+        bottom: 60px;
+    
+}
+
+.icon_go_up{
+    position: absolute;
+    bottom: 40px;
+}
+
+.error_psw{
+    border: 3px solid red;
+}
+
+.inputBox:focus::placeholder{
+    color: transparent;
+}
+
+.input_all:focus-within .icon_go_up{
+    animation-name: goUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.icon_go_down .icon_go_up{
+    animation-name: goDown;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+
+.inputBox::placeholder{
+color: white;
+font-family: 'Poppins',
+sans-serif;
+font-size: 16px;
+padding-left: 20px;
+}
+
+.inputBox:focus{
+    border-bottom: 2px solid white;
+}
+
+.alert{
+    position: absolute;
+    right: 2px;
+    font-size: 12px;
+    color: #c80000;
+    background-color: white;
+    border: 1px solid;
+    width: 115px;
+    height: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    bottom: 40px;
+}
+
+.dp_none{
+    display: none;
+}
+
+.alert span{
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+@keyframes goUp{
+    0%{
+        bottom:40px;
+    }
+    100% {
+        bottom: 60px;
+    }
+}
+
+@keyframes goDown {
+    0% {
+        bottom: 60px;
+    }
+
+    100% {
+        bottom: 40px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .alert{
+        visibility
+        : hidden;
+    }
+    .alert span{
+       visibility: visible;
+    }
+.alert span:hover  .alert {
+    visibility: visible;
+}
+
+}
